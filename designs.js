@@ -11,10 +11,12 @@ function makeGrid() {
     const table = $('#pixel_canvas');
     const bucket = $('#bucket');
     const pencil = $('#pencil');
-    var color=$('#colorPicker').val();
+    const single = $('#single');
+    var mouseHold = false;
+    var color = $('#colorPicker').val();
     // const opacity = $('#opacity').val();
 
-    table.children().remove() ;
+    table.children().remove();
 
     for (var row = 0; row < height; row++) {
         var tr = document.createElement('tr');
@@ -26,39 +28,37 @@ function makeGrid() {
         }
     }
 
-    table.on('click', 'td', function(){
+    table.on('click', 'td', function () {
         // var color=$('#colorPicker').val();
         $(this).css('background-color', color);
     });
 
-    bucket.on('click', function(){
+    bucket.on('click', function () {
         // var color=$('#colorPicker').val();
         $(table).css('background-color', color);
     });
 
-    pencil.on('click', function(){
-        var mouseHold = false;
-        table.on("mousedown", "td", function() {
+    pencil.on('click', function () {
+        mouseHold = false;
+        table.on("mousedown", "td", function () {
             mouseHold = true;
             $(this).css("background-color", color);
         });
-        table.on("mouseenter", "td", function() {
+        table.on("mouseenter", "td", function () {
             if (mouseHold) {
                 $(this).css("background-color", color);
             }
         });
-        $('body').on("mouseup", function() {
+        $('body').on("mouseup", function () {
             mouseHold = false;
         });
     });
 
-
-// //================= Submit/Clear Button ===================//
-//     $('form').submit(function(e) {
-//         table.empty();
-//         e.preventDefault();
-//         makeGrid();
-//     });
+    single.on('click', (function () {
+        table.on("mousedown", "td", function () {
+            mouseHold = false;
+        });
+    }));
 
     // opacity.on('click', 'td', function(){
     //     var color= $('#colorPicker').val();
@@ -66,11 +66,11 @@ function makeGrid() {
     //     $(this).css({ opacity: opacity })
     // });
 
-    $('td').dblclick(function(){
+    $('td').dblclick(function () {
         $(this).css('background-color', '#f8f8ff');
     });
 
-    $('#reset').click(function(){
+    $('#reset').click(function () {
         $('td').css('background-color', '#f8f8ff');
     });
 }
