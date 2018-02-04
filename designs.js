@@ -10,6 +10,7 @@ function makeGrid() {
     const width = $('#input_width').val();
     const table = $('#pixel_canvas');
     const bucket = $('#bucket');
+    const pensil = $('#pensil');
     const opacity = $('#opacity').val();
 
     table.children().remove() ;
@@ -32,6 +33,13 @@ function makeGrid() {
     bucket.on('click', function(){
         var color=$('#colorPicker').val();
         $(table).css('background-color', color);
+    });
+
+    pensil.on(mouseenter, function(){
+        // onmouseenter (function(){
+            var color=$('#colorPicker').val();
+            $(table).css('background-color', color);
+        // });
     });
 
     // opacity.on('click', 'td', function(){
