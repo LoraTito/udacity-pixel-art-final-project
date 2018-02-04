@@ -28,7 +28,7 @@ function makeGrid() {
         $(this).css('background-color', color);
     });
 
-    bucket.on('click', function(){  
+    bucket.on('click', function(){
         var color=$('#colorPicker').val();
         $(table).css('background-color', color);
     });
