@@ -9,6 +9,7 @@ function makeGrid() {
     const height = $('#input_height').val();
     const width = $('#input_width').val();
     const table = $('#pixel_canvas');
+    const bucket = $('#bucket');
 
     table.children().remove() ;
 
@@ -25,6 +26,11 @@ function makeGrid() {
     table.on('click', 'td', function(){
         var color=$('#colorPicker').val();
         $(this).css('background-color', color);
+    });
+
+    bucket.on('click', function(){  
+        var color=$('#colorPicker').val();
+        $(table).css('background-color', color);
     });
 
     $('td').dblclick(function(){
