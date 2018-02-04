@@ -19,7 +19,14 @@ function makeGrid() {
             tr.append(td);
         }
     }
+
+    table.on('click', 'td', function(){
+        var color=$('#colorPicker').val();
+        $(this).css('background-color', color);
+    });
+
 }
+
 
 $('#sizePicker').submit(function (event) {
     event.preventDefault();
