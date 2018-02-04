@@ -10,7 +10,8 @@ function makeGrid() {
     const width = $('#input_width').val();
     const table = $('#pixel_canvas');
     const bucket = $('#bucket');
-    const pencil = $('#pensil');
+    const pencil = $('#pencil');
+    var color=$('#colorPicker').val();
     // const opacity = $('#opacity').val();
 
     table.children().remove() ;
@@ -26,21 +27,38 @@ function makeGrid() {
     }
 
     table.on('click', 'td', function(){
-        var color=$('#colorPicker').val();
+        // var color=$('#colorPicker').val();
         $(this).css('background-color', color);
     });
 
     bucket.on('click', function(){
-        var color=$('#colorPicker').val();
+        // var color=$('#colorPicker').val();
         $(table).css('background-color', color);
     });
 
     pencil.on('click', function(){
-        $(td).mouseenter(function() {
-            var color=$('#colorPicker').val();
-            $(td).css('background-color', color);
+        var mouseHold = false;
+        table.on("mousedown", "td", function() {
+            mouseHold = true;
+            $(this).css("background-color", color);
+        });
+        table.on("mouseenter", "td", function() {
+            if (mouseHold) {
+                $(this).css("background-color", color);
+            }
+        });
+        $('body').on("mouseup", function() {
+            mouseHold = false;
         });
     });
+
+
+// //================= Submit/Clear Button ===================//
+//     $('form').submit(function(e) {
+//         table.empty();
+//         e.preventDefault();
+//         makeGrid();
+//     });
 
     // opacity.on('click', 'td', function(){
     //     var color= $('#colorPicker').val();
