@@ -52,6 +52,8 @@ input[type=number] {
 .tooltip {
     position: relative;
     display: inline-block;
+    width: 50px;
+    margin: 10px;
 }
 
 /* Tooltip text */
@@ -78,9 +80,7 @@ input[type=number] {
 
 
 .tool {
-    width: 10%;
-    display: block;
-    margin: auto;
+    width: 100%;
     background-position: -25px;
     transition: all 1s ease;
     -moz-transition: all 1s ease;

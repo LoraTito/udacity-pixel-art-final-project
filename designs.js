@@ -10,8 +10,8 @@ function makeGrid() {
     const width = $('#input_width').val();
     const table = $('#pixel_canvas');
     const bucket = $('#bucket');
-    const pensil = $('#pensil');
-    const opacity = $('#opacity').val();
+    const pencil = $('#pensil');
+    // const opacity = $('#opacity').val();
 
     table.children().remove() ;
 
@@ -35,8 +35,8 @@ function makeGrid() {
         $(table).css('background-color', color);
     });
 
-    pensil.on('click', function(){
-        $(td).onmouseenter (function(){
+    pencil.on('click', function(){
+        $(td).mouseenter(function() {
             var color=$('#colorPicker').val();
             $(td).css('background-color', color);
         });
