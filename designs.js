@@ -10,6 +10,8 @@ function makeGrid() {
     const width = $('#input_width').val();
     const table = $('#pixel_canvas');
 
+    table.children().remove() ;
+
     for (var row = 0; row < height; row++) {
         var tr = document.createElement('tr');
         table.append(tr);
