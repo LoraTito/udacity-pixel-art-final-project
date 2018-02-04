@@ -25,6 +25,13 @@ function makeGrid() {
         $(this).css('background-color', color);
     });
 
+    $('td').dblclick(function(){
+        $(this).css('background-color', '#f8f8ff');
+    });
+
+    $('#reset').click(function(){
+        $('td').css('background-color', '#f8f8ff');
+    });
 }
 
 
