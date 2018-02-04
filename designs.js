@@ -29,16 +29,17 @@ function makeGrid() {
     }
 
     table.on('click', 'td', function () {
-        // var color=$('#colorPicker').val();
+        var color=$('#colorPicker').val();
         $(this).css('background-color', color);
     });
 
     bucket.on('click', function () {
-        // var color=$('#colorPicker').val();
+        var color=$('#colorPicker').val();
         $(table).css('background-color', color);
     });
 
     pencil.on('click', function () {
+        var color=$('#colorPicker').val();
         mouseHold = false;
         table.on("mousedown", "td", function () {
             mouseHold = true;
@@ -70,7 +71,7 @@ function makeGrid() {
         $(this).css('background-color', '#f8f8ff');
     });
 
-    $('#reset').click(function () {
+    $('#reset').on('click', function () {
         $('td').css('background-color', '#f8f8ff');
     });
 }
