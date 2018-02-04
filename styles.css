@@ -35,10 +35,10 @@ td {
     width: 20px;
 }
 
-img {
-    width: 50px;
-    height: auto;
-}
+/*img {*/
+    /*width: 50px;*/
+    /*height: auto;*/
+/*}*/
 
 input[type=number] {
     width: 6em;
@@ -68,4 +68,30 @@ input[type=number] {
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
     visibility: visible;
+}
+
+/*animation*/
+
+
+.tool {
+    width: 10%;
+    display: block;
+    margin: auto;
+    background-position: -25px;
+    transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}
+
+.tool:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand')";
+    filter: progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand');
 }
