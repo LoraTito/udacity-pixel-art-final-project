@@ -13,7 +13,8 @@ function makeGrid() {
     const pencil = $('#pencil');
     const single = $('#single');
     var mouseHold = false;
-    var color = $('#colorPicker').val();
+    const tool = $('.tool');
+    // var color = $('#colorPicker').val();
     // const opacity = $('#opacity').val();
 
     table.children().remove();
@@ -34,11 +35,13 @@ function makeGrid() {
     });
 
     bucket.on('click', function () {
+        $("#used-tool").append('<p>You are using Bucket tool</p>');
         var color=$('#colorPicker').val();
         $(table).css('background-color', color);
     });
 
     pencil.on('click', function () {
+        $("#used-tool").append('<p>You are using Pencil tool</p>');
         var color=$('#colorPicker').val();
         mouseHold = false;
         table.on("mousedown", "td", function () {
@@ -53,10 +56,13 @@ function makeGrid() {
         $('body').on("mouseup", function () {
             mouseHold = false;
         });
+
     });
 
     single.on('click', (function () {
+        $("#used-tool").append('<p>You are using Single pixel tool</p>');
         table.on("mousedown", "td", function () {
+
             mouseHold = false;
         });
     }));
