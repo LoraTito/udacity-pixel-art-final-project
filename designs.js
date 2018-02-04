@@ -35,11 +35,11 @@ function makeGrid() {
         $(table).css('background-color', color);
     });
 
-    pensil.on(mouseenter, function(){
-        // onmouseenter (function(){
+    pensil.on('click', function(){
+        $(td).onmouseenter (function(){
             var color=$('#colorPicker').val();
-            $(table).css('background-color', color);
-        // });
+            $(td).css('background-color', color);
+        });
     });
 
     // opacity.on('click', 'td', function(){
